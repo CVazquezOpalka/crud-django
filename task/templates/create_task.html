@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block content %}
+<main class="mt-4">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <h1 class="text-center">Create Task</h1>
+
+      <form action="/tasks/create/" method="POST">
+        {% csrf_token %} {{form.as_p}}
+        <button>Save</button>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}

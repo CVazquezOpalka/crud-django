@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block content %}
+<main class="container mt-5">
+ <div class="row">
+  <div class="col-md-6 offset-md-3">
+
+  <h1 class="text-center">Tasks Pending</h1>
+
+  <ul class="list-group">
+    {% for t in task %}
+        <li class="list-group-item my-2">
+          <div class="card-body bg-dark">
+            <a
+              href="{% url 'task_detail' t.id %}"
+              class="text-white text-decoration-none"
+            >
+              {% if t.important %}
+              <h4 class="text-center text-capitalize">
+                <strong>{{t.title}}</strong>
+              </h4>
+              {% else %}
+              <h1>{{t.title}}</h1>
+              {% endif %}
+              <p class="text-center">{{t.description}}</p>
+              <p class="text-end">{{t.user.username}}</p>
+
+              {% if t.datecomplited %}
+              <p class="text-end">{{t.datecomplited}}</p>
+              {% endif %}
+            </a>
+          </div>
+        </li>
+        {% endfor %}
+  </ul>
+  </div>
+ </div>
+</main>
+
+{% endblock %}

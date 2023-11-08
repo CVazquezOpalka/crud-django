@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+<main class="container py-5">
+  <section class="card card-body">
+    <h1 class="display-1 text-center">Django APP</h1>
+    <p>
+      Bienvenidos!, Este es un proyecto de crud con <strong>DJANGO</strong>,
+      utiliza <strong>Jinja</strong> como motor de plantillas, ademas de
+      <strong>Bootstrap</strong> como framework visual, sientanse libres de
+      utilizar esta aplicacion para mamtener sus proyectos ordenados
+    </p>
+ 
+    <div class="d-flex align-item-center justify-content-center gap-4">
+      <div>
+        <a href="/signin" class="btn btn-primary">Signin</a>
+      </div>
+      <div>
+        <a href="/signup" class="btn btn-primary">Signup</a>
+      </div>
+    </div>
+    
+  </section>
+</main>
+
+{% endblock %}
